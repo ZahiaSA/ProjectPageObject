@@ -17,16 +17,16 @@ public class HomePage {
         By BarreRecherche = By.cssSelector("#twotabsearchtextbox");
         driver.findElement(BarreRecherche).sendKeys("Nintendo Switch");
 
+       return this;
+    }
+    public ListArticlsPage openList(){
         By ValiderRecherche = By.cssSelector(".nav-right #nav-search-submit-button");
         driver.findElement(ValiderRecherche).click();
-        return this;
+        return new ListArticlsPage(driver);
+
     }
 
-    public FirstArticlHomePage OpenFistArticle() {
-        By articleSelector = By.cssSelector(".s-image");
-        List<WebElement> listArticles = driver.findElements(articleSelector);
-        listArticles.get(0).click();
-        return new FirstArticlHomePage(driver);
+
 
     /*public DetailProduct OpenFistArticle(){
         By articleSelector = By.cssSelector(".s-image");
@@ -34,5 +34,5 @@ public class HomePage {
         listArticles.get(0).click();
         return new DetailProduct(driver);
     }*/
-    }
+
 }

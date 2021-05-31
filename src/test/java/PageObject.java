@@ -36,7 +36,8 @@ public class PageObject {
         HomePage amazonHomePage = new HomePage(driver);
         boolean isNintendoSwitchDisplayed = amazonHomePage
                 .OpenListArticle()
-                .OpenFistArticle()
+                .openList()
+                .choiseFirstArticl()
                 .isNintendoSwitchDisplayed();
 
         // Asset
